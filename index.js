@@ -105,7 +105,7 @@ app.get('/api/health', async (req, res) => {
 app.get('/api/services', apiLimiter, async (req, res) => {
   try {
     const db = await connectToDatabase();
-    const services = await db.collection('services').find({ ).toArray();
+    const services = await db.collection('services').find( ).toArray();
     res.json(services);
   } catch (err) {
     res.status(500).json({ error: 'Database error' });
